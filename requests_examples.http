@@ -1,0 +1,126 @@
+@baseUrl = http://127.0.0.1:5001
+
+# Создание пользователя
+POST {{baseUrl}}/users/
+Content-Type: application/json
+
+{
+  "email": "user-1-email@somedomain.com",
+  "password": "123qwerty"
+}
+
+###
+
+# Создание пользователя c занятой почтой
+POST {{baseUrl}}/users/
+Content-Type: application/json
+
+{
+  "email": "user-1-email@somedomain.com",
+  "password": "123qwerty"
+}
+
+###
+
+# Создание пользователя с коротким паролем
+POST {{baseUrl}}/users/
+Content-Type: application/json
+
+{
+  "email": "user-2-email@somedomain.com",
+  "password": "123q"
+}
+
+###
+
+# Получение пользователя
+GET {{baseUrl}}/users/1/
+Content-Type: application/json
+
+###
+
+# Получение несуществующего пользователя
+GET {{baseUrl}}/users/101/
+Content-Type: application/json
+
+###
+
+# Создание объявления для пользователя
+POST {{baseUrl}}/advertisements/
+Content-Type: application/json
+
+{
+  "title": "iPhone 11",
+  "description": "New, Red colour",
+  "user_id": 1
+}
+
+###
+
+# Получение объявления
+GET {{baseUrl}}/advertisements/1/
+Content-Type: application/json
+
+###
+
+# Получение несуществующего объявления
+GET {{baseUrl}}/advertisements/303/
+Content-Type: application/json
+
+###
+
+# Обновление объявления
+PATCH {{baseUrl}}/advertisements/1/
+Content-Type: application/json
+
+{
+  "description": "New, Red colour, discount 10%"
+}
+
+###
+
+# Получение обновлённого объявления
+GET {{baseUrl}}/advertisements/1/
+Content-Type: application/json
+
+###
+
+# Удаление объявления
+DELETE {{baseUrl}}/advertisements/1/
+Content-Type: application/json
+
+###
+
+# Получение удалённого объявления
+GET {{baseUrl}}/advertisements/1/
+Content-Type: application/json
+
+###
+
+# Обновление пользователя
+PATCH {{baseUrl}}/users/1/
+Content-Type: application/json
+
+{
+  "email": "updated-email@somedomain.com"
+}
+
+###
+
+# Получение обновлённого пользователя
+GET {{baseUrl}}/users/1/
+Content-Type: application/json
+
+###
+
+# Удаление пользователя
+DELETE {{baseUrl}}/users/1/
+Content-Type: application/json
+
+###
+
+# Получение удалённого пользователя
+GET {{baseUrl}}/users/3/
+Content-Type: application/json
+
+###

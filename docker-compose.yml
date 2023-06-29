@@ -1,0 +1,13 @@
+version: '3.11'
+
+networks:
+  dev_network:
+services:
+  db:
+    image: postgres:15.3-alpine3.17
+    ports:
+      - "5430:5432"
+    environment:
+      POSTGRES_DB: flask
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
